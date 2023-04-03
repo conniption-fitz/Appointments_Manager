@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="246.0" prefWidth="429.0" style="-fx-background-color: #FBEEE6;" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LogIn">
+   <children>
+      <BorderPane prefHeight="214.0" prefWidth="429.0" AnchorPane.bottomAnchor="49.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <BorderPane prefHeight="67.0" prefWidth="429.0" BorderPane.alignment="CENTER">
+               <bottom>
+                  <BorderPane prefHeight="38.0" prefWidth="429.0" style="-fx-background-color: #D35400;" BorderPane.alignment="CENTER">
+                     <center>
+                        <Label text="DESERT SANDS APPOINTMENT SCHEDULER" textFill="WHITE" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="Bauhaus 93" size="20.0" />
+                           </font>
+                        </Label>
+                     </center>
+                  </BorderPane>
+               </bottom>
+               <top>
+                  <Pane prefHeight="16.0" prefWidth="429.0" style="-fx-background-color: #F6DDCC;" BorderPane.alignment="CENTER" />
+               </top>
+               <center>
+                  <Pane prefHeight="40.0" prefWidth="429.0" style="-fx-background-color: #E59866;" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+         </top>
+         <center>
+            <Pane prefHeight="163.0" prefWidth="429.0" BorderPane.alignment="CENTER">
+               <children>
+                  <PasswordField fx:id="passwordTF" layoutX="140.0" layoutY="84.0" promptText="password" />
+                  <TextField fx:id="usernameTF" layoutX="140.0" layoutY="49.0" promptText="username" />
+                  <Button fx:id="loginButton" layoutX="190.0" layoutY="119.0" mnemonicParsing="false" onAction="#onLogIn" style="-fx-background-color: #E59866;" text="LOG IN" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Label layoutX="151.0" layoutY="14.0" text="PLEASE LOG IN" textFill="#d35400">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

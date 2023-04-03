@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="789.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerMenu">
+    <children>
+        <BorderPane prefHeight="611.6666666666667" prefWidth="789.0" style="-fx-background-color: #FDF2E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <BorderPane prefHeight="82.0" prefWidth="789.0" style="-fx-background-color: #D35400;" BorderPane.alignment="CENTER">
+                    <bottom>
+                        <Label prefHeight="43.0" prefWidth="433.0" text="DESERT SANDS APPOINTMENT SCHEDULER" textFill="WHITE" BorderPane.alignment="CENTER">
+                            <font>
+                                <Font name="Bauhaus 93" size="24.0" />
+                            </font>
+                        </Label>
+                    </bottom>
+                    <top>
+                        <Pane prefHeight="18.0" prefWidth="789.0" style="-fx-background-color: #F6DDCC;" BorderPane.alignment="CENTER" />
+                    </top>
+                    <center>
+                        <Pane prefHeight="0.0" prefWidth="789.0" style="-fx-background-color: #E59866;" BorderPane.alignment="CENTER" />
+                    </center>
+                </BorderPane>
+            </top>
+            <center>
+                <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <top>
+                        <Pane prefHeight="31.0" prefWidth="789.0" BorderPane.alignment="CENTER" />
+                    </top>
+                    <left>
+                        <Pane prefHeight="341.0" prefWidth="29.0" BorderPane.alignment="CENTER" />
+                    </left>
+                    <right>
+                        <Pane prefHeight="341.0" prefWidth="29.0" BorderPane.alignment="CENTER" />
+                    </right>
+                    <center>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #DC7633; -fx-border-radius: 20; -fx-border-width: 2;" BorderPane.alignment="CENTER">
+                            <center>
+                                <TableView fx:id="customerTable" prefHeight="179.0" prefWidth="727.0" BorderPane.alignment="CENTER">
+                                    <columns>
+                                        <TableColumn fx:id="customerIDCol" prefWidth="43.33333969116211" text="ID" />
+                                        <TableColumn fx:id="nameCol" prefWidth="139.66666793823242" text="NAME" />
+                                        <TableColumn fx:id="addressCol" prefWidth="215.66668701171875" text="ADDRESS" />
+                                        <TableColumn fx:id="divisionCol" prefWidth="116.66665649414062" text="DIVISION" />
+                                        <TableColumn fx:id="zipCol" prefWidth="75.0" text="ZIP" />
+                                        <TableColumn fx:id="phoneCol" prefWidth="134.0" text="PHONE" />
+                                    </columns>
+                                </TableView>
+                            </center>
+                            <bottom>
+                                <ButtonBar prefHeight="40.0" prefWidth="706.0" BorderPane.alignment="CENTER">
+                                    <buttons>
+                                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#onAdd" style="-fx-background-color: #E59866;" text="ADD" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="editButton" mnemonicParsing="false" onAction="#onEdit" style="-fx-background-color: #E59866;" text="EDIT" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onDelete" style="-fx-background-color: #E59866;" text="DELETE" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="exitButton" layoutX="471.0" layoutY="17.0" mnemonicParsing="false" onAction="#onExit" style="-fx-background-color: #E59866;" text="EXIT" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </Button>
+                                    </buttons>
+                                    <padding>
+                                        <Insets right="20.0" />
+                                    </padding>
+                                </ButtonBar>
+                            </bottom>
+                            <top>
+                                <BorderPane prefHeight="66.0" prefWidth="731.0" BorderPane.alignment="CENTER">
+                                    <center>
+                                        <Label text="CUSTOMERS" textFill="#d35400" BorderPane.alignment="CENTER">
+                                            <font>
+                                                <Font name="Bauhaus 93" size="20.0" />
+                                            </font>
+                                        </Label>
+                                    </center>
+                                    <top>
+                                        <Pane prefHeight="13.0" prefWidth="731.0" visible="false" BorderPane.alignment="CENTER" />
+                                    </top>
+                                    <bottom>
+                                        <BorderPane prefHeight="17.0" prefWidth="727.0" BorderPane.alignment="CENTER" />
+                                    </bottom>
+                                </BorderPane>
+                            </top>
+                        </BorderPane>
+                    </center>
+                    <bottom>
+                        <Pane prefHeight="22.0" prefWidth="789.0" BorderPane.alignment="CENTER" />
+                    </bottom>
+                </BorderPane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

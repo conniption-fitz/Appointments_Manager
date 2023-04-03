@@ -2,6 +2,7 @@ package helper;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public abstract class JDBC {
 
@@ -24,7 +25,7 @@ public abstract class JDBC {
         }
         catch(Exception e)
         {
-            System.out.println("Error:" + e.getMessage());
+            e.printStackTrace();
         }
     }
 
