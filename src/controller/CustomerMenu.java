@@ -1,8 +1,11 @@
+/**
+ *
+ * @author Tory Fitzgerald, id: 000559078
+ */
+
 package controller;
 
-import helper.CountryDAO;
-import helper.CustomerDAO;
-import helper.DivisionDAO;
+import helper.*;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +19,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Customer;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -37,7 +39,6 @@ public class CustomerMenu implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         ObservableList<Customer> allCustomers = CustomerDAO.getAllCustomers();
 
         customerTable.setItems(allCustomers);
@@ -50,6 +51,12 @@ public class CustomerMenu implements Initializable {
         zipCol.setCellValueFactory(new PropertyValueFactory<>("zipCode"));
 
     }
+
+    /**
+     * Closes the Customer Menu and returns to the Dashboard.
+     *
+     * @param actionEvent - the exit button is clicked
+     */
     public void onExit(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/view/Dashboard.fxml"));
         Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
@@ -59,53 +66,64 @@ public class CustomerMenu implements Initializable {
         stage.show();
     }
 
+    /**
+     * Deletes a user-selected Customer. The application checks to confirm that the user wants to delete the customer.
+     * If the user clicks OK, the application checks to see if the customer has any appointments, and deletes them,
+     * then deletes the Customer from the database.
+     *
+     * @param actionEvent - the delete button is clicked
+     */
     public void onDelete(ActionEvent actionEvent) throws SQLException {
         Customer selected = customerTable.getSelectionModel().getSelectedItem();
-        int isDeleted = -1;
+        int appointmentsDeleted = -1;
+        int customerDeleted = -1;
 
-        //delete customer appointments
-        //add alert to confirm delete
-        boolean valid = true;
-
-        if (valid) {
-            isDeleted = CustomerDAO.deleteCustomer(selected);
-            //alerts
-            if (isDeleted > 0) {
-                System.out.println("Delete successful.");
-            }
-            else {
-                System.out.println("Delete failed.");
+        boolean confirm = AlertsManager.confirmDelete(selected.getCustomerName());
+        if(confirm) {
+            appointmentsDeleted = AppointmentDAO.deleteAppointmentByCustomerID(selected.getCustomerID());
+            if (appointmentsDeleted == -1) {
+                AlertsManager.deleteFailed(selected.getCustomerName());
+            } else {
+                customerDeleted = CustomerDAO.deleteCustomer(selected);
+                if (customerDeleted == -1) {
+                    AlertsManager.deleteFailed(selected.getCustomerName());
+                } else {
+                    AlertsManager.deleteSuccess(selected.getCustomerName());
+                }
             }
         }
-
         ObservableList<Customer> allCustomers = CustomerDAO.getAllCustomers();
-
         customerTable.setItems(allCustomers);
     }
 
+    /**
+     * Opens the Edit Customer form and loads the user-selected Customer.
+     *
+     * @param actionEvent - the edit button is clicked
+     */
     public void onEdit(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/view/EditCustomer.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         EditCustomer controller = loader.getController();
-
         try {
             Customer selected = customerTable.getSelectionModel().getSelectedItem();
-
             controller.loadCustomer(selected);
-
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setTitle("Edit Customer");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
-            //noSelection.showAndWait();
-            System.out.println("No selection.");
+            AlertsManager.missingSelection(" customer.");
         }
-
     }
 
+    /**
+     * Opens the Add Customer form.
+     *
+     * @param actionEvent - the add button is clicked
+     */
     public void onAdd(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/view/AddCustomer.fxml"));
         Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();

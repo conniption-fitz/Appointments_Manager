@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="369.0" prefWidth="352.0" style="-fx-background-color: #FBEEE6;" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddCustomer">
+<AnchorPane prefHeight="369.0" prefWidth="352.0" style="-fx-background-color: #FBEEE6;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddCustomer">
    <children>
       <BorderPane prefHeight="435.0" prefWidth="352.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -42,7 +42,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font></Label>
                   <ComboBox fx:id="countryCombo" layoutX="118.0" layoutY="163.0" onAction="#onCountry" prefWidth="150.0" promptText="Select" />
-                  <ComboBox fx:id="divisionCombo" layoutX="118.0" layoutY="199.0" onAction="#onDivision" prefWidth="150.0" promptText="Select" />
+                  <ComboBox fx:id="divisionCombo" layoutX="118.0" layoutY="199.0" prefWidth="150.0" promptText="Select" />
                   <Label layoutX="52.0" layoutY="95.0" text="ADDRESS:" textFill="#d35400">
                      <font>
                         <Font name="System Bold" size="12.0" />

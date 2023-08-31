@@ -1,3 +1,7 @@
+/**
+ * Supplied class JDBC.java
+ */
+
 package helper;
 
 import java.sql.Connection;
@@ -5,7 +9,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public abstract class JDBC {
-
     private static final String protocol = "jdbc";
     private static final String vendor = ":mysql:";
     private static final String location = "//localhost/";
@@ -16,6 +19,9 @@ public abstract class JDBC {
     private static String password = "Passw0rd!"; // Password
     public static Connection connection;  // Connection Interface
 
+    /**
+     * Connects to the database.
+     */
     public static void openConnection()
     {
         try {
@@ -29,6 +35,9 @@ public abstract class JDBC {
         }
     }
 
+    /**
+     * Disconnects from the database.
+     */
     public static void closeConnection() {
         try {
             connection.close();

@@ -40,7 +40,7 @@
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font></Label>
-                        <ComboBox fx:id="contactCombo" layoutX="167.0" layoutY="149.0" onAction="#onContact" prefWidth="150.0" promptText="Select" />
+                        <ComboBox fx:id="contactCombo" layoutX="167.0" layoutY="149.0" prefWidth="150.0" promptText="Select" />
                         <ComboBox fx:id="typeCombo" layoutX="165.0" layoutY="184.0" prefWidth="150.0" promptText="Select" />
                         <Label layoutX="93.0" layoutY="118.0" text="LOCATION:" textFill="#d35400">
                             <font>
@@ -65,16 +65,14 @@
                             </font></Label>
                         <ComboBox fx:id="startHourCombo" layoutX="165.0" layoutY="255.0" onAction="#onStartHour" prefHeight="25.0" prefWidth="61.0" promptText="HH" />
                         <ComboBox fx:id="startMinuteCombo" layoutX="236.0" layoutY="255.0" onAction="#onStartMinute" prefHeight="25.0" prefWidth="66.0" promptText="MM" />
-                        <ComboBox fx:id="endHourCombo" layoutX="165.0" layoutY="290.0" onAction="#onEndHour" prefHeight="25.0" prefWidth="61.0" promptText="HH" />
-                        <ComboBox fx:id="endMinuteCombo" layoutX="236.0" layoutY="290.0" onAction="#onEndMinute" prefHeight="25.0" prefWidth="66.0" promptText="MM" />
+                        <ComboBox fx:id="endHourCombo" layoutX="165.0" layoutY="290.0" prefHeight="25.0" prefWidth="61.0" promptText="HH" />
+                        <ComboBox fx:id="endMinuteCombo" layoutX="236.0" layoutY="290.0" prefHeight="25.0" prefWidth="66.0" promptText="MM" />
                         <Label layoutX="87.0" layoutY="329.0" text="CUSTOMER:" textFill="#d35400">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font></Label>
-                        <ComboBox fx:id="customerCombo" layoutX="165.0" layoutY="325.0" onAction="#onCustomer" prefWidth="150.0" />
-                  <ComboBox fx:id="monthCombo" layoutX="165.0" layoutY="220.0" onAction="#onMonth" prefHeight="25.0" prefWidth="74.0" promptText="MM" />
-                  <ComboBox fx:id="dayCombo" layoutX="250.0" layoutY="220.0" onAction="#onDay" prefHeight="25.0" prefWidth="61.0" promptText="DD" />
-                  <ComboBox fx:id="yearCombo" layoutX="322.0" layoutY="220.0" onAction="#onYear" prefHeight="25.0" prefWidth="70.0" promptText="YYYY" />
+                        <ComboBox fx:id="customerCombo" layoutX="165.0" layoutY="325.0" prefWidth="150.0" promptText="Select" />
+                  <DatePicker fx:id="datePicker" layoutX="165.0" layoutY="220.0" prefHeight="25.0" prefWidth="135.0" />
                     </children>
                 </Pane>
             </center>

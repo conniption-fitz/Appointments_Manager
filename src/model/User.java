@@ -1,3 +1,8 @@
+/**
+ *
+ * @author Tory Fitzgerald, id: 000559078
+ */
+
 package model;
 
 public class User {
@@ -5,34 +10,48 @@ public class User {
     private int userID;
     private String userName;
     private String password;
+    private boolean loggedIn;
 
     public User(int userID, String userName, String password) {
         this.userID = userID;
         this.userName = userName;
         this.password = password;
+        loggedIn = false;
     }
 
+    /**
+     * @return the userID
+     */
     public int getUserID() {
         return userID;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
-    }
-
+    /**
+     * @return the userName
+     */
     public String getUserName() {
         return userName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
+    /**
+     * @return the password
+     */
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    /**
+     * @return the loggedIn status
+     */
+    public boolean getLoggedInStatus() {
+        return loggedIn;
+    }
+
+    /**
+     * @param status - the loggedIn status
+     */
+    public void setLoggedInStatus(boolean status) {
+        loggedIn = status;
+        System.out.println(userName + " login status is " + loggedIn);
     }
 }

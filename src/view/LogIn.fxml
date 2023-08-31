@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="246.0" prefWidth="429.0" style="-fx-background-color: #FBEEE6;" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LogIn">
+<AnchorPane prefHeight="246.0" prefWidth="429.0" style="-fx-background-color: #FBEEE6;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LogIn">
    <children>
       <BorderPane prefHeight="214.0" prefWidth="429.0" AnchorPane.bottomAnchor="49.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -31,20 +31,29 @@
          <center>
             <Pane prefHeight="163.0" prefWidth="429.0" BorderPane.alignment="CENTER">
                <children>
-                  <PasswordField fx:id="passwordTF" layoutX="140.0" layoutY="84.0" promptText="password" />
-                  <TextField fx:id="usernameTF" layoutX="140.0" layoutY="49.0" promptText="username" />
-                  <Button fx:id="loginButton" layoutX="190.0" layoutY="119.0" mnemonicParsing="false" onAction="#onLogIn" style="-fx-background-color: #E59866;" text="LOG IN" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font></Button>
-                  <Label layoutX="151.0" layoutY="14.0" text="PLEASE LOG IN" textFill="#d35400">
+                  <PasswordField fx:id="passwordTF" layoutX="146.0" layoutY="89.0" promptText="password" />
+                  <TextField fx:id="usernameTF" layoutX="146.0" layoutY="54.0" promptText="username" />
+                  <Label fx:id="promptLabel" alignment="CENTER" layoutX="1.0" layoutY="14.0" prefHeight="27.0" prefWidth="429.0" text="PLEASE LOG IN" textAlignment="CENTER" textFill="#d35400">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
+                  <Button fx:id="loginButton" alignment="CENTER" layoutX="169.0" layoutY="124.0" mnemonicParsing="false" onAction="#onLogIn" prefHeight="25.0" prefWidth="104.0" style="-fx-background-color: #E59866;" text="LOG IN" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
                </children>
             </Pane>
          </center>
       </BorderPane>
+      <Label fx:id="timeZoneLabel" layoutX="82.0" layoutY="223.0" text="UTC" textFill="#d35400">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="11.0" layoutY="223.0" text="TIME ZONE: " textFill="#d35400">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
    </children>
 </AnchorPane>

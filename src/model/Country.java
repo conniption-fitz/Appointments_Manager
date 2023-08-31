@@ -1,3 +1,8 @@
+/**
+ *
+ * @author Tory Fitzgerald, id: 000559078
+ */
+
 package model;
 
 public class Country {
@@ -10,20 +15,11 @@ public class Country {
         this.countryName = countryName;
     }
 
+    /**
+     * @return the countryID
+     */
     public int getCountryID() {
         return countryID;
-    }
-
-    public void setCountryID(int countryID) {
-        this.countryID = countryID;
-    }
-
-    public String getCountryName() {
-        return countryName;
-    }
-
-    public void setCountryName(String countryName) {
-        this.countryName = countryName;
     }
 
     @Override

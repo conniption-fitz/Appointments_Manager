@@ -1,3 +1,8 @@
+/**
+ *
+ * @author Tory Fitzgerald, id: 000559078
+ */
+
 package model;
 
 
@@ -14,28 +19,18 @@ public class Division {
         this.countryID = countryID;
     }
 
+    /**
+     * @return the divisionID
+     */
     public int getDivisionID() {
         return divisionID;
     }
 
-    public void setDivisionID(int divisionID) {
-        this.divisionID = divisionID;
-    }
-
-    public String getDivisionName() {
-        return divisionName;
-    }
-
-    public void setDivisionName(String divisionName) {
-        this.divisionName = divisionName;
-    }
-
+    /**
+     * @return the countryID
+     */
     public int getCountryID() {
         return countryID;
-    }
-
-    public void setCountryID(int countryID) {
-        this.countryID = countryID;
     }
 
     @Override
